@@ -31,7 +31,9 @@ export async function getStaticProps(context) {
     (comment) => comment.id === parseInt(commentId)
   );
 
-  console.log(comment);
+  const user = process.env.DB_USER;
+  const password = process.env.DB_PASSWORD;
+  console.log(`loggin the user: ${user}, and the password: ${password}`);
   return {
     props: {
       comment,
